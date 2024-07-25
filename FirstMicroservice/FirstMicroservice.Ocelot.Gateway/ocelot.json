@@ -5,7 +5,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "http://localhost",
+          "Host": "localhost",
           "Port": 5001
         }
       ],
