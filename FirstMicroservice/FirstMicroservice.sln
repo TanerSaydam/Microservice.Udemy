@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstMicroservice.Todos.Web
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstMicroservice.Categories.WebAPI", "FirstMicroservice.Categories.WebAPI\FirstMicroservice.Categories.WebAPI.csproj", "{D1544DFE-01BE-4118-8976-A395A8FFB200}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstMicroservice.Ocelot.Gateway", "FirstMicroservice.Ocelot.Gateway\FirstMicroservice.Ocelot.Gateway.csproj", "{AE1919D9-0EAD-4AFC-A853-3229BC4A3677}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D1544DFE-01BE-4118-8976-A395A8FFB200}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1544DFE-01BE-4118-8976-A395A8FFB200}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1544DFE-01BE-4118-8976-A395A8FFB200}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE1919D9-0EAD-4AFC-A853-3229BC4A3677}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE1919D9-0EAD-4AFC-A853-3229BC4A3677}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE1919D9-0EAD-4AFC-A853-3229BC4A3677}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE1919D9-0EAD-4AFC-A853-3229BC4A3677}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
