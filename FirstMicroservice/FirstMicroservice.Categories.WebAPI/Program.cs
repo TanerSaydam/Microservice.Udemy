@@ -39,4 +39,11 @@ app.MapPost("/categories/create", async (CreateCategoryDto request, ApplicationD
     return Results.Ok(new { Message = "Category create is successful" });
 });
 
+using (var scoped = app.Services.CreateScope())
+{
+    var srv = scoped.ServiceProvider;
+    var context = srv.GetRequiredService<ApplicationDbContext>();
+    context.Database.Migrate();
+}
+
 app.Run();
