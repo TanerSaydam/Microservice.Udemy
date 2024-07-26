@@ -20,7 +20,7 @@ app.MapGet("/getall", async (ApplicationDbContext context, CancellationToken can
 
     HttpClient client = new HttpClient();
 
-    var message = await client.GetAsync("http://localhost:5001/getall");
+    var message = await client.GetAsync("http://products:8080/getall");
 
     Result<List<ProductDto>>? products = new();
 
