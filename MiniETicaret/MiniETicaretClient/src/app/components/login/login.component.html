@@ -1,0 +1,29 @@
+<div class="row d-flex" style="height: 98vh; align-items: center; justify-content: center;">
+    <div class="col-md-4 col-12">
+        <div class="card">
+            <div class="card-header">
+                <h1>Giriş Sayfası</h1>
+                <p>Giriş yapmak için gereken bilgileri doldurun</p>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Kullanıcı Adı</label>
+                    <input [(ngModel)]="model().userName" type="text" class="form-control">
+                </div>
+        
+                <div class="form-group mt-1">
+                    <label>Şifre</label>
+                    <input [(ngModel)]="model().password" type="password" class="form-control">
+                </div>
+        
+                <div class="form-group mt-1">
+                    <button class="btn btn-primary w-100" (click)="login()">Giriş Yap</button>
+                </div>
+        
+                <div class="form-group mt-1">
+                    <a routerLink="/register">Hesabınız yok mu? Ücretsiz Kaydolun</a>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>

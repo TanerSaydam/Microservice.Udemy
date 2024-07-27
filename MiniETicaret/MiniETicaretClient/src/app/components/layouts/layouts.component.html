@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand">Mini e-Ticaret</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+            <a class="nav-link">Ana Sayfa</a>
+          </li>
+          <li class="nav-item" routerLink="/orders" routerLinkActive="active">
+            <a class="nav-link">Siparişler</a>
+          </li>
+        </ul>
+        <button class="btn btn-success me-2">
+            Sepetim
+            <span>(5)</span>
+        </button>
+        <button routerLink="/login" class="btn btn-outline-danger">
+            Çıkış Yap
+        </button>
+      </div>
+    </div>
+  </nav>
+
+<router-outlet></router-outlet>
