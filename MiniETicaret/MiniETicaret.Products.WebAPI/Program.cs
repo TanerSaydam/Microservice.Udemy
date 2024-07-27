@@ -67,6 +67,22 @@ app.MapPost("/create", async (CreateProductDto request, ApplicationDbContext con
     return Results.Ok(Result<string>.Succeed("Ürün kaydý baþarýyla oluþturuldu"));
 });
 
+app.MapPost("/change-product-stock", async (List<ChangeProductStockDto> request, ApplicationDbContext context, CancellationToken cancellationToken) =>
+{
+    foreach (var item in request)
+    {
+        Product? product = await context.Products.FindAsync(item.ProductId, cancellationToken);
+        if (product is not null)
+        {
+            product.Stock -= item.Quantity;
+        }
+    }
+
+    await context.SaveChangesAsync(cancellationToken);
+
+    return Results.NoContent();
+});
+
 using (var scoped = app.Services.CreateScope())
 {
     var srv = scoped.ServiceProvider;
