@@ -11,18 +11,16 @@ import { TrCurrencyPipe } from 'tr-currency';
   styleUrl: './shopping-carts.component.css'
 })
 export class ShoppingCartsComponent {
-  total = computed(()=> {
+  total = computed(() => {
     let t = 0;
-    this.cart.carts().forEach((val)=> {
+    this.cart.carts().forEach((val) => {
       t += val.productPrice * val.quantity
     });
 
     return t;
   });
 
-constructor(
-  public cart: CartsService  
-){}
-
-
+  constructor(
+    public cart: CartsService
+  ) { }
 }

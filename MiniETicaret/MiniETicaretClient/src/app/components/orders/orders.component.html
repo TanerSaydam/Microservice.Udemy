@@ -1,1 +1,26 @@
-<p>orders works!</p>
+<div class="mt-4">
+    <h1>Siparişlerim</h1>
+</div>
+
+<div class="mt-4">
+    <flexi-grid
+    [data]="orders()"
+    [pageable]="true"
+    [sortable]="true"
+    [resizable]="true"
+    [showCaption]="true"
+    [filterable]="true"
+    captionTitle="Sipariş Listem"
+    [showIndex]="true"
+    >
+
+    <flexi-grid-column field="productName" width="60%" title="Ürün Adı"></flexi-grid-column>
+    <flexi-grid-column field="quantity" width="10%" textAlign="center" title="Adet"></flexi-grid-column>
+    <flexi-grid-column field="price" width="10%" textAlign="right" title="Ürün Fiyatı"></flexi-grid-column>
+    <flexi-grid-column title="Toplam Fiyat" width="10%" textAlign="right" [columnTemplate]="totalColumnTemplate">
+        <ng-template #totalColumnTemplate let-item="item">
+            <span>{{(item.quantity * item.price) | trCurrency:'₺'}}</span>
+        </ng-template>
+    </flexi-grid-column>
+</flexi-grid>
+</div>
