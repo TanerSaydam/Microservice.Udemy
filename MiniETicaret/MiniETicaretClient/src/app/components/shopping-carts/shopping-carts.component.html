@@ -1,1 +1,38 @@
-<p>shopping-carts works!</p>
+<div class="mt-4">
+    <h1>Sepetim</h1>
+</div>
+
+<div class="mt-4">
+    <div class="row">
+        <div class="col-md-10 col-12">
+            <flexi-grid
+            [data]="cart.carts()"
+            [pageable]="true"
+            [sortable]="true"
+            [resizable]="true"
+            [showCaption]="true"
+            captionTitle="Sepetteki Ürünlerim"
+            [showIndex]="true"
+            >
+
+            <flexi-grid-column field="productName" width="60%" title="Ürün Adı"></flexi-grid-column>
+            <flexi-grid-column field="quantity" width="10%" title="Adet"></flexi-grid-column>
+            <flexi-grid-column field="productPrice" width="10%" title="Ürün Fiyatı"></flexi-grid-column>
+            <flexi-grid-column title="Toplam Fiyat" width="10%" [columnTemplate]="totalColumnTemplate">
+                <ng-template #totalColumnTemplate let-item="item">
+                    <span>{{(item.quantity * item.productPrice) | trCurrency:'₺'}}</span>
+                </ng-template>
+            </flexi-grid-column>
+        </flexi-grid>
+        </div>
+        <div class="col-md-2 col-12 text-center">
+            <h3>Toplam</h3>
+            <h3 class="alert alert-danger">
+                {{total() | trCurrency:'₺'}}
+            </h3>
+            <button (click)="cart.createOrder()" class="btn btn-danger mt-2 w-100">
+                Sipariş Oluştur
+            </button>
+        </div>
+    </div>
+</div>
